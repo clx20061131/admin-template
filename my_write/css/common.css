@@ -159,7 +159,7 @@ a.bg-danger:hover {
 	border-bottom-style: solid;
 	border-left-style: solid;
 	cursor:pointer;
-	width:50px;
+	width:80px;
 	height:25px;	
 	text-align: center;
 	border-radius: 4px;
@@ -183,6 +183,11 @@ a.bg-danger:hover {
     border-color: #d43f3a;
     color: #fff;
 }
+.btn-info{
+	color: #fff;
+	background-color: #31b0d5;
+	border-color: #269abc;	
+}
 .select{
   padding:5px 10px;
 }
@@ -190,4 +195,37 @@ a.bg-danger:hover {
   width:400px;
   height:75px;
   padding:10px;
+}
+.icon{
+	display:inline-block;
+	width:24px;
+	height:24px;
+	line-height:24px;
+}
+.add-icon{	
+	background:url(../images/small/action_add.png) no-repeat center center;
+}
+.edit-icon{	
+	background:url(../images/small/reply.png) no-repeat center center;
+}
+.del-all-icon{	
+	background:url(../images/small/del.png) no-repeat center center;
+}
+.del-icon{	
+	background:url(../images/small/action_delete.png) no-repeat center center;
+}
+.listorder-icon{	
+	background:url(../images/small/listorder.png) no-repeat center center;
+}
+.w150{
+ width:150px;
+}
+.w375{
+  width:375px;
+}
+.w50{ 
+  width:50px;
+}
+.w100{
+ width:50px;
 }

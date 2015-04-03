@@ -2,15 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-cn">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<meta http-equiv="Content-Language" content="zh-CN" />
-		<script type="text/javascript" src="http://siteapp.baidu.com/static/webappservice/uaredirect.js"></script>
-		
+		<meta http-equiv="Content-Language" content="zh-CN" />		
 		<title>后台</title>
 		<meta name="keywords" content="" />
 		<meta name="description" content="" />
 		<link href="css/reset.css" rel="stylesheet" type="text/css" />
 		<link href="css/common.css" rel="stylesheet" type="text/css" />
 		<link href="css/style.css" rel="stylesheet" type="text/css" />	
+		<link href="css/Validform.css" rel="stylesheet" type="text/css" />	
 	</head>
 	<body>
 	    <div class="wrap">
@@ -61,9 +60,17 @@
 			      <p class="position">当前位置：<a href="">首页</a> >><a href="">首页</a></p>
 				  <div class="main">
 					 <div class="main-title">
-					  <form><input type="text" name="" class="input input-200"><input type="submit" value="搜索" class="btn btn-main"></form>
+					  <div class="fr">
+					  <form>
+						<input type="text" name="" class="input input-200">
+						<input type="submit" value="搜索" class="btn btn-main">
+					  </form>
+					  </div>
 					 </div>
 					 <div class="main-content">
+					   <div class="main-content-title">
+					    <a href=""><i class="icon add-icon">&nbsp;</i>增加</a> <a href=""><i class="icon edit-icon">&nbsp;</i>编辑</a> <a href="" ><i class="icon del-icon">&nbsp;</i>删除</a><a href="#" class="disabled">不可用</a>
+					   </div>
 					   <table class="table-list">
 					   <thead>
 							<tr>
@@ -80,6 +87,7 @@
 							</tr>
 						</tbody>
 					   </table>
+					   <form action="" class="form001">
 					   <table class="table-detail">
 					   <thead>
 							<tr >
@@ -89,24 +97,33 @@
 						</thead>
 						<tbody>
 							<tr>
-							  <td>标题</td>
-							  <td class="tal"><input type="text" name="title" value="" class="input input-350"><span class="tip-info">请输入密码</span></td>							  
+							  <td class="w150">标题</td>
+							  <td class="tal w375 bdrn">
+							    <input type="text" name="title" value="" class="input input-350" datatype="s4-50" errormsg="至少4个字符,最多50个字符！">			
+							  </td>		
+							 <td><span class="Validform_checktip"></span></td>
 							</tr>
 							<tr>
 							  <td>多选</td>
-							  <td class="tal"><input type="checkbox" name="title" value="" class="input"> A <input type="checkbox" name="title" value="" class="input"> B <span class="tip-info">请输入密码</span></td>							  
+							  <td class="tal"><input type="checkbox" name="checkbox[]" value="" class="input" datatype="*" nullmsg="请选择" > A 
+									<input type="checkbox" name="checkbox[]" value="" class="input"> B 
+							  </td>
+							  <td><span class="Validform_checktip"></span></td>							  
 							</tr>
 							<tr>
 							  <td>单选</td>
-							  <td class="tal"><input type="radio" name="title" value="" class="input"> A <input type="radio" name="title" value="" class="input"> B <span class="tip-info">请输入密码</span></td>							  
+							  <td class="tal"><input type="radio" name="title" value="" class="input"> A <input type="radio" name="title" value="" class="input"> B <span class="tip-info Validform_checktip">请输入密码</span></td>							  
 							</tr>
 							<tr>
 							  <td>下拉框</td>
-							  <td class="tal"><select class="select"><option value="">1<option value="">2</select> <span class="tip-info">请输入密码</span></td>							  
+							  <td class="tal"><select class="select"><option value="">1<option value="">2</select> <span class="tip-info Validform_checktip">请输入密码</span></td>							  
 							</tr>
 							<tr>
 							  <td>textarea</td>
-							  <td class="tal"><textarea class="textarea"></textarea> <span class="tip-info">请输入密码</span></td>							  
+							  <td class="tal">
+							    <textarea class="textarea" errormsg="很感谢您花费宝贵时间给我们提供反馈，请填写有效内容！"  datatype="s" altercss="gray"></textarea>
+							  </td>		
+							<td><span class="Validform_checktip"></span></td>									
 							</tr>
 							<tr>
 							  <td colspan="2"><input type="submit" class="btn btn-main" value="提交"></td>
@@ -114,8 +131,10 @@
 							</tr>
 						</tbody>
 					   </table>
+					   </form>
 					 </div>
 				  </div>
+				  
 			   </div>
 			</div>
 			<div class="footer">
@@ -124,6 +143,11 @@
 		</div>
 	   <script type="text/javascript" src="js/jquery.min.js"></script>
 	   <script type="text/javascript" src="js/admin.js"></script>
+	   <script type="text/javascript" src="js/Validform.js"></script>
+	   <script>
+	     $(".form001").Validform({tiptype:2});  //就这一行代码！;
+	   </script>
+	   
 	   
 	</body>
 </html>
